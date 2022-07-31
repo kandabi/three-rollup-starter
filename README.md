@@ -1,8 +1,6 @@
-# three-typescript-starter
+# three-typescript-rollup-starter
 
 This repo contains a bare-bones example of how to create an application using Rollup, including importing a module from `node_modules` and converting it from CommonJS.
-
-_See also https://github.com/rollup/rollup-starter-lib_
 
 ## Getting started
 
@@ -28,6 +26,8 @@ The `public/index.html` file contains a `<script src='bundle.js'>` tag, which me
 `npm run watch` will continually rebuild the application as your source files change.
 
 `npm run dev` will run `npm start` and `npm run watch` in parallel.
+
+\_Based on GrantBartlett's repo https://github.com/GrantBartlett/three-typescript-webpack-starter
 
 ## License
 
