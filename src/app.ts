@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import './styles/styles.sass';
-import crate from './assets/crate.gif';
+import orangeTexture from './assets/orangeTexture.png';
 
 export class App {
    private camera: THREE.PerspectiveCamera;
@@ -12,7 +12,7 @@ export class App {
       this.camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1000);
       this.camera.position.z = 400;
       this.scene = new THREE.Scene();
-      const texture = new THREE.TextureLoader().load(crate);
+      const texture = new THREE.TextureLoader().load(orangeTexture);
       const geometry = new THREE.BoxGeometry(200, 200, 200);
 
       const material = new THREE.MeshBasicMaterial({ map: texture });
@@ -35,8 +35,8 @@ export class App {
 
    private animate() {
       requestAnimationFrame(this.animate.bind(this));
-      this.mesh.rotation.x += 0.005;
-      this.mesh.rotation.y += 0.01;
+      this.mesh.rotation.x += 0.0008;
+      this.mesh.rotation.y -= 0.005;
       this.renderer.render(this.scene, this.camera);
    }
 }
