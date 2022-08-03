@@ -7,6 +7,7 @@ import serve from 'rollup-plugin-serve';
 import scss from 'rollup-plugin-scss';
 import url from '@rollup/plugin-url';
 import html from '@rollup/plugin-html';
+import { string } from 'rollup-plugin-string';
 
 const production = !process.env.ROLLUP_WATCH;
 const directory = production ? 'prod' : 'dev';
@@ -26,6 +27,7 @@ export default {
       html({ title: 'App', fileName: 'index.html' }),
       typescript({ module: 'ESNext' }),
       url({ fileName: 'assets/[name][extname]' }),
+      string({ include: '**/*.glsl' }),
       production && terser(),
       !production && livereload(),
       !production &&
