@@ -46,7 +46,7 @@ export class App {
 
    private render() {
       requestAnimationFrame(this.render.bind(this));
-      this.box.rotation.x += 0.0008;
+      this.box.rotation.x += 0.001;
       this.box.rotation.y -= 0.005;
       this.renderer.render(this.scene, this.camera);
    }
